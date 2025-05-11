@@ -5,19 +5,26 @@ const HogueraSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  temporada: {
-    type: Number,
-    required: true
-  },
-  ubicacion: {
+  participante: {
     type: String,
     required: true
   },
-  temporada: {
-    type: Number,
+  pareja_presente: {
+    type: String,
+    required: true
+  },
+  tentacion_presente: {
+    type: String,
+    required: true
+  },
+  reaccion: {
+    type: String,
+    required: true
+  },
+  decision: {
+    type: String,
     required: true
   }
-
 }, {
   timestamps: true
 });
