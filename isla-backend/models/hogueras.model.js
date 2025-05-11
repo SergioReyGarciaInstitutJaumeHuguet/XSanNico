@@ -29,4 +29,4 @@ const HogueraSchema = new mongoose.Schema({
   timestamps: true
 });
 
-module.exports = mongoose.model('Hoguera', HogueraSchema);
+module.exports = mongoose.model('Hoguera', HogueraSchema, 'Hogueras');
