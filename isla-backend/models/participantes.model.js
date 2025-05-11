@@ -9,26 +9,30 @@ const ParticipanteSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  genero: {
+  ciudad: {
     type: String,
-    enum: ['hombre', 'mujer'],
     required: true
   },
-  rol: {
+  estado_actual: {
     type: String,
-    enum: ['pareja', 'tentador/a'],
+    enum: ['pareja', 'soltero/a'],
     required: true
   },
-  temporada: {
-    type: Number,
-    required: true
-  },
-  avatar: {
+  pareja: {
     type: String,
     required: false
+  },
+  tentaciones: {
+    type: [String], // Array de strings
+    required: false
+  },
+  infidelidades: {
+    type: Number,
+    required: true,
+    default: 0
   }
 }, {
   timestamps: true
 });
 
-module.exports = mongoose.model('Participante', ParticipanteSchema);
+module.exports = mongoose.model('Participante', ParticipanteSchema, 'Participantes');
