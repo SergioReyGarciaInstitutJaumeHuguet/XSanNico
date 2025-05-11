@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="form-container">
+    <h2>Crear Hoguera</h2>
+    <form (ngSubmit)="enviarFormulario()">
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="hoguera.nombre" name="nombre" required />
+        <div *ngIf="errores['nombre']" class="error-msg">{{ errores['nombre'] }}</div>
+    
+        <label>Temporada:</label>
+        <input type="number" [(ngModel)]="hoguera.temporada" name="temporada" required />
+        <div *ngIf="errores['temporada']" class="error-msg">{{ errores['temporada'] }}</div>
+
+        <label>Ubicacion:</label>
+        <input type="text" [(ngModel)]="hoguera.ubicacion" name="ubicacion" required />
+        <div *ngIf="errores['ubicacion']" class="error-msg">{{ errores['ubicacion'] }}</div>
+        
+        <label>Parejas:</label>
+        <input type="number" [(ngModel)]="hoguera.parejas" name="parejas" required />
+        <div *ngIf="errores['parejas']" class="error-msg">{{ errores['parejas'] }}</div> 
+      
+  
+      <button type="submit">Crear Hoguera</button>
+    </form>
+  </div>
+  

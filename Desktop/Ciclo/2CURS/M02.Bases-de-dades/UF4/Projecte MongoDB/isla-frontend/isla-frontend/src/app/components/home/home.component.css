@@ -1,0 +1,13 @@
+.home-container {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+    min-height: 100vh;
+  }
+  
+  .home-container h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+ 

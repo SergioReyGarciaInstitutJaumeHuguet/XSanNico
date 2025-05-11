@@ -1,0 +1,24 @@
+ 
+  .button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .header-btn {
+    padding: 15px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .header-btn:hover {
+    background-color: #45a049;
+  }
+  
