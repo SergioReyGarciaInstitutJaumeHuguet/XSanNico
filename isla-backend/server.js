@@ -14,6 +14,11 @@ mongoose.connect(process.env.MONGO_URI, {
 }).then(() => console.log("Conectado a MongoDB"))
   .catch(err => console.error("Error al conectar a MongoDB", err));
 
+// Ruta raíz
+app.get('/', (req, res) => {
+    res.send('API Isla en funcionament!');
+});
+
 // Importar rutas
 const hogueraRoutes = require('./routes/hogueraRoutes');
 const participanteRoutes = require('./routes/participanteRoutes');
