@@ -1,13 +1,32 @@
 .home-container {
     text-align: center;
     padding: 40px;
-    background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+    background: transparent;
     min-height: 100vh;
   }
   
   .home-container h1 {
     font-size: 2rem;
     margin-bottom: 40px;
-    color: #333;
+    color: #e2e2e2;
   }
- 
+  /* Fondo de fuego animado */
+@keyframes fireGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px #ff6b00, 0 0 40px #ff6b00;
+  }
+  50% {
+    box-shadow: 0 0 30px #ff3c00, 0 0 60px #ff3c00;
+  }
+}
+ #fire-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3pqb254cmtwcjgyM2pzYmIzYjZub3dpbnQ3dHB6cmU0cHdqdzQzYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XJ2LOkwAUN25LQLlvO/giphy.gif') center center / cover no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}

@@ -6,6 +6,9 @@
     <p><strong>Género:</strong> {{ participante.genero }}</p>
     <p><strong>Rol:</strong> {{ participante.rol }}</p>
     <p><strong>Temporada:</strong> {{ participante.temporada }}</p>
-    <!-- <img *ngIf="participante.foto" [src]="'/assets/images/' + participante.foto" alt="Foto de {{ participante.nombre }}" /> -->
+    <img [src]="getAvatarUrl(participante)" alt="Foto de {{ participante.nombre }}" />
+ 
   </div>
+   <div id="fire-bg"></div>
+
 </div>

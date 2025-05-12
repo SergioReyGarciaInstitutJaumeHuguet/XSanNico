@@ -18,21 +18,21 @@ export class ParticipanteFormComponent {
     rol: '',
     temporada: null,
     genero: '',
-    avatar: ''
+    foto: 0
   };
   edadInvalida = false;
   errores: Record<string, string> = {};
 
   avataresHombre = [
-    { nombre: 'trump', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/TrumpPortrait.jpg/960px-TrumpPortrait.jpg' },
-    { nombre: 'abascal', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Santiago_Abascal_2022_%28cropped%29.jpg/1200px-Santiago_Abascal_2022_%28cropped%29.jpg' },
-    { nombre: 'cejas', url: 'https://img.asmedia.epimg.net/resizer/v2/CJZVRW3IJJMWFMXJ3HM6N4NFGE.jpg?auth=90cb3b24dd8a76fbad389abbe08bd7fcb5eacded1efe6458bcc712a47f26c635&width=1200&height=1200&smart=true' },
-    { nombre: 'rubiales', url: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Luis_Rubiales_2018.jpg'}
+    { nombre: '0', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/TrumpPortrait.jpg/960px-TrumpPortrait.jpg' },
+    { nombre: '1', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Santiago_Abascal_2022_%28cropped%29.jpg/1200px-Santiago_Abascal_2022_%28cropped%29.jpg' },
+    { nombre: '2', url: 'https://img.asmedia.epimg.net/resizer/v2/CJZVRW3IJJMWFMXJ3HM6N4NFGE.jpg?auth=90cb3b24dd8a76fbad389abbe08bd7fcb5eacded1efe6458bcc712a47f26c635&width=1200&height=1200&smart=true' },
+    { nombre: '3', url: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Luis_Rubiales_2018.jpg'}
   ];
   avataresMujer = [
-    { nombre: 'ayuso', url: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Isabel_D%C3%ADaz_Ayuso_en_el_s%C3%A9ptimo_aniversario_de_El_Huffpost_%28cropped%29.jpg' },
-    { nombre: 'carmen', url: 'https://album.mediaset.es/eimg/2020/03/23/WQruIayd9sWJP6TNjeu6N4.jpg' },
-    { nombre: 'shakira', url: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/2023-11-16_Gala_de_los_Latin_Grammy%2C_03_%28cropped%2901.jpg' }
+    { nombre: '4', url: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Isabel_D%C3%ADaz_Ayuso_en_el_s%C3%A9ptimo_aniversario_de_El_Huffpost_%28cropped%29.jpg' },
+    { nombre: '5', url: 'https://album.mediaset.es/eimg/2020/03/23/WQruIayd9sWJP6TNjeu6N4.jpg' },
+    { nombre: '6', url: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/2023-11-16_Gala_de_los_Latin_Grammy%2C_03_%28cropped%2901.jpg' }
   ];
 
   indiceSeleccionado = 0;
@@ -55,10 +55,9 @@ export class ParticipanteFormComponent {
     }
   }
   
-  seleccionarAvatar(avatar: { nombre: string; url: string }) {
-    this.participante.avatar = avatar.nombre;
+  seleccionarAvatar(foto: { nombre: string; url: string }) {
+    this.participante.foto = parseInt(foto.nombre, 10); // convierte a número
   }
-
   enviarFormulario() {
     this.errores = {};  // Reinicia errores
 
@@ -86,8 +85,8 @@ export class ParticipanteFormComponent {
       this.errores['genero'] = 'Debes seleccionar un género.';
     }
 
-    if (!this.participante.avatar) {
-      this.errores['avatar'] = 'Debes seleccionar un avatar.';
+    if (!this.participante.foto) {
+      this.errores['foto'] = 'Debes seleccionar una foto.';
     }
 
     if (Object.keys(this.errores).length > 0) return;
