@@ -1,0 +1,25 @@
+<h2>Editar Participante</h2>
+<form (ngSubmit)="save()">
+  <label for="nombre">Nombre:</label>
+  <input id="nombre" [(ngModel)]="participante.nombre" name="nombre" required />
+
+  <label for="edad">Edad:</label>
+  <input id="edad" type="number" [(ngModel)]="participante.edad" name="edad" required />
+
+  <label for="genero">Género:</label>
+  <select id="genero" [(ngModel)]="participante.genero" name="genero" required>
+    <option value="hombre">Hombre</option>
+    <option value="mujer">Mujer</option>
+  </select>
+
+  <label for="rol">Rol:</label>
+  <select id="rol" [(ngModel)]="participante.rol" name="rol" required>
+    <option value="pareja">Pareja</option>
+    <option value="tentador">Tentador</option>
+  </select>
+
+  <label for="temporada">Temporada:</label>
+  <input id="temporada" type="number" [(ngModel)]="participante.temporada" name="temporada" required />
+
+  <button type="submit">Guardar</button>
+</form>

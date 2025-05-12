@@ -3,17 +3,19 @@ import { HeaderComponent } from '../../header/header.component';
 import { HogueraService } from '../../../services/hoguera.service';
 import { Hoguera } from '../../../models/hoguera.model'; // Asegúrate de tener esta interfaz
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; // Importa RouterModule
 
 @Component({
   selector: 'app-hoguera-list',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, RouterModule], // Asegúrate de incluir RouterModule aquí
   templateUrl: './hoguera-list.component.html',
   styleUrls: ['./hoguera-list.component.css'],
-  providers: [HogueraService] // o bien usa providedIn: 'root' en el servicio
+  providers: [HogueraService], // o bien usa providedIn: 'root' en el servicio
 })
 export class HogueraListComponent implements OnInit {
-  hogueras: Hoguera[] = []
+  hogueras: Hoguera[] = [];
+
   constructor(private hogueraService: HogueraService) {}
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class HogueraListComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error al obtener hogueras', error);
-      }
+      },
     });
   }
 }

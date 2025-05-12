@@ -1,0 +1,16 @@
+<h2>Editar Hoguera</h2>
+<form (ngSubmit)="save()">
+  <label for="nombre">Nombre:</label>
+  <input id="nombre" [(ngModel)]="hoguera.nombre" name="nombre" required />
+
+  <label for="temporada">Temporada:</label>
+  <input id="temporada" type="number" [(ngModel)]="hoguera.temporada" name="temporada" required />
+
+  <label for="ubicacion">Ubicación:</label>
+  <input id="ubicacion" [(ngModel)]="hoguera.ubicacion" name="ubicacion" required />
+
+  <label for="parejas">Parejas:</label>
+  <input id="parejas" type="number" [(ngModel)]="hoguera.parejas" name="parejas" required />
+
+  <button type="submit">Guardar</button>
+</form>

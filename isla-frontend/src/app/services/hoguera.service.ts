@@ -24,4 +24,8 @@ export class HogueraService {
   delete(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  getById(id: string): Observable<Hoguera> {
+    return this.http.get<Hoguera>(`${this.apiUrl}/${id}`);
+  }
 }
