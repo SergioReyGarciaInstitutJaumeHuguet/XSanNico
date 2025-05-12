@@ -9,24 +9,20 @@ const ParticipanteSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  ciudad: {
+  rol: {
     type: String,
+    enum: ['pareja', 'tentador', 'tentadora'],
     required: true
   },
-  estado_actual: {
-    type: String,
-    enum: ['pareja', 'soltero/a'],
-    required: true
-  },
-  pareja: {
-    type: String,
+  temporada: {
+    type: Number,
     required: false
   },
-  tentaciones: {
-    type: [String], // Array de strings
+  Genero: {
+    type: Number, 
     required: false
   },
-  infidelidades: {
+  foto: {
     type: Number,
     required: true,
     default: 0
