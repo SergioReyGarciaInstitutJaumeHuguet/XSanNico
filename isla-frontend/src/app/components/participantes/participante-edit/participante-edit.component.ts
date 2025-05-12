@@ -37,4 +37,14 @@ export class ParticipanteEditComponent implements OnInit {
       });
     }
   }
+  delete(): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este participante?')) {
+      if (this.participante._id) {
+        this.participanteService.delete(this.participante._id).subscribe(() => {
+          alert('Participante eliminado correctamente');
+          this.router.navigate(['/participantes']); // Redirige a la lista de participantes
+        });
+      }
+    }
+  }
 }
