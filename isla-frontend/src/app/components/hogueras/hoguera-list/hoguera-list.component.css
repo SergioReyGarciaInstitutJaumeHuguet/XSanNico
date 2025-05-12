@@ -19,6 +19,7 @@
   text-align: center;
   animation: fireGlow 2s infinite;
   transition: transform 0.3s;
+  cursor:pointer;
 }
 
 /* Estilo para el título */

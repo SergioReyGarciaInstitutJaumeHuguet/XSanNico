@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Importa CommonModule
-import { RouterModule } from '@angular/router'; // Importa RouterModule
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router'; 
 import { ParticipanteService } from '../../../services/participante.service';
 import { Participante } from '../../../models/participante.model';
 import { HeaderComponent } from '../../../components/header/header.component';
@@ -8,7 +8,7 @@ import { HeaderComponent } from '../../../components/header/header.component';
 @Component({
   selector: 'app-participante-list',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, RouterModule], // Asegúrate de incluir RouterModule aquí
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './participante-list.component.html',
   styleUrls: ['./participante-list.component.css'],
 })
@@ -28,7 +28,7 @@ export class ParticipanteListComponent implements OnInit {
     { nombre: '6', url: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/2023-11-16_Gala_de_los_Latin_Grammy%2C_03_%28cropped%2901.jpg' }
   ];
 
-  constructor(private participanteService: ParticipanteService) {}
+  constructor(private participanteService: ParticipanteService, private router: Router) {}
 
   ngOnInit(): void {
     this.participanteService.getAll().subscribe({
@@ -59,5 +59,12 @@ export class ParticipanteListComponent implements OnInit {
     }
 
     return '';
+  }
+  goToEdit(id: string | undefined): void {
+    if (id) {
+      this.router.navigate(['/participantes/editar', id]); // Navega a la página de edición
+    } else {
+      console.error('El ID del participante es undefined');
+    }
   }
 }

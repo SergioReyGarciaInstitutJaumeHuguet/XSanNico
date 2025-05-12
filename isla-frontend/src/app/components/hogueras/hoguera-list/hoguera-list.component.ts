@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../header/header.component';
 import { HogueraService } from '../../../services/hoguera.service';
-import { Hoguera } from '../../../models/hoguera.model'; // Asegúrate de tener esta interfaz
+import { Hoguera } from '../../../models/hoguera.model';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; // Importa RouterModule
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router'; // Importa Router
 
 @Component({
   selector: 'app-hoguera-list',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, RouterModule], // Asegúrate de incluir RouterModule aquí
+  imports: [CommonModule, HeaderComponent, RouterModule],
   templateUrl: './hoguera-list.component.html',
   styleUrls: ['./hoguera-list.component.css'],
-  providers: [HogueraService], // o bien usa providedIn: 'root' en el servicio
+  providers: [HogueraService],
 })
 export class HogueraListComponent implements OnInit {
   hogueras: Hoguera[] = [];
 
-  constructor(private hogueraService: HogueraService) {}
+  constructor(
+    private hogueraService: HogueraService,
+    private router: Router // Inyecta el servicio Router
+  ) {}
 
   ngOnInit(): void {
     this.hogueraService.getAll().subscribe({
@@ -28,5 +32,13 @@ export class HogueraListComponent implements OnInit {
         console.error('Error al obtener hogueras', error);
       },
     });
+  }
+
+  goToEdit(id: string | undefined): void {
+    if (id) {
+      this.router.navigate(['/hogueras/editar', id]); // Navega a la página de edición
+    } else {
+      console.error('El ID de la hoguera es undefined');
+    }
   }
 }

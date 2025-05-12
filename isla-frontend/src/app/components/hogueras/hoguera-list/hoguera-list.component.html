@@ -1,9 +1,10 @@
 <app-header></app-header>
 <div class="hogueras-container">
-  <div *ngFor="let hoguera of hogueras" class="hoguera-card">
-    <h3>
-      <a [routerLink]="['/hogueras/editar', hoguera._id]">{{ hoguera.nombre }}</a>
-    </h3>
+ <div 
+    *ngFor="let hoguera of hogueras" 
+    class="hoguera-card" 
+    (click)="goToEdit(hoguera._id)">
+    <h3>{{ hoguera.nombre }}</h3>
     <p><strong>Temporada:</strong> {{ hoguera.temporada }}</p>
     <p><strong>Ubicación:</strong> {{ hoguera.ubicacion }}</p>
     <p><strong>Parejas:</strong> {{ hoguera.parejas }}</p>
