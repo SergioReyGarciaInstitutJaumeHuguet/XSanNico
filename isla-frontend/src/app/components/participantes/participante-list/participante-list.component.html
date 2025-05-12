@@ -1,1 +1,11 @@
 <app-header></app-header>
+<div class="participantes-container">
+  <div *ngFor="let participante of participantes" class="participante-card">
+    <h3>{{ participante.nombre }}</h3>
+    <p><strong>Edad:</strong> {{ participante.edad }}</p>
+    <p><strong>Género:</strong> {{ participante.genero }}</p>
+    <p><strong>Rol:</strong> {{ participante.rol }}</p>
+    <p><strong>Temporada:</strong> {{ participante.temporada }}</p>
+    <!-- <img *ngIf="participante.foto" [src]="'/assets/images/' + participante.foto" alt="Foto de {{ participante.nombre }}" /> -->
+  </div>
+</div>

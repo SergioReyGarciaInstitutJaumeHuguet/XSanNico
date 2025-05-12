@@ -5,5 +5,5 @@ export interface Participante {
     genero: string;
     rol: 'tentador' | 'pareja';
     temporada: number;
-    foto: number;
+    foto?: number;
   }
