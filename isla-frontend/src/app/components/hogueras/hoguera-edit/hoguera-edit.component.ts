@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule para dir
 import { ActivatedRoute, Router } from '@angular/router';
 import { HogueraService } from '../../../services/hoguera.service';
 import { Hoguera } from '../../../models/hoguera.model';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-hoguera-edit',
   standalone: true,
-  imports: [FormsModule, CommonModule], // Asegúrate de incluir FormsModule y CommonModule aquí
+  imports: [HeaderComponent, FormsModule, CommonModule], // Asegúrate de incluir FormsModule y CommonModule aquí
   templateUrl: './hoguera-edit.component.html',
   styleUrls: ['./hoguera-edit.component.css'],
 })

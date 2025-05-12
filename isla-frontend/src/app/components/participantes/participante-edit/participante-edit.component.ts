@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule para dir
 import { ActivatedRoute, Router } from '@angular/router';
 import { ParticipanteService } from '../../../services/participante.service';
 import { Participante } from '../../../models/participante.model';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-participante-edit',
   standalone: true,
-  imports: [FormsModule, CommonModule], // Asegúrate de incluir FormsModule y CommonModule aquí
+  imports: [HeaderComponent, FormsModule, CommonModule], // Asegúrate de incluir FormsModule y CommonModule aquí
   templateUrl: './participante-edit.component.html',
   styleUrls: ['./participante-edit.component.css'],
 })
