@@ -14,7 +14,7 @@
         <select [(ngModel)]="participante.rol" name="rol" required>
           <option value="">Selecciona un rol</option>
           <option value="pareja">Pareja</option>
-          <option value="tentador/a">Tentador/a</option>
+          <option value="tentador">Tentador/a</option>
         </select>
         <div *ngIf="errores['rol']" class="error-msg">{{ errores['rol'] }}</div>
         

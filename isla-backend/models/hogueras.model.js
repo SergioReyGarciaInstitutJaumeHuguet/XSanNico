@@ -9,10 +9,14 @@ const HogueraSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  participantes: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Participante'
-  }],
+  ubicacion: {
+    type: String,
+    required: true
+  },
+  parejas: {
+    type: Number,
+    required: true
+  }
 }, {
   timestamps: true
 });

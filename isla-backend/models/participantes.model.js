@@ -16,7 +16,7 @@ const ParticipanteSchema = new mongoose.Schema({
   },
   rol: {
     type: String,
-    enum: ['pareja', 'tentador', 'tentadora'],
+    enum: ['pareja', 'tentador'],
     required: true
   },
   temporada: {
