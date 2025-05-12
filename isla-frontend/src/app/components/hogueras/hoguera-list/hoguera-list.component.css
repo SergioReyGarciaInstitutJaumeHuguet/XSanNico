@@ -1,0 +1,41 @@
+/* Contenedor principal */
+.hogueras-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Tarjeta de cada hoguera */
+.hoguera-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Estilo para el título */
+.hoguera-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Estilo para los párrafos */
+.hoguera-card p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+/* Efecto hover */
+.hoguera-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}

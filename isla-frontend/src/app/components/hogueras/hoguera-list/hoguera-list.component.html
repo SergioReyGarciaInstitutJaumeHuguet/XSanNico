@@ -1,1 +1,9 @@
 <app-header></app-header>
+<div class="hogueras-container">
+  <div *ngFor="let hoguera of hogueras" class="hoguera-card">
+    <h3>{{ hoguera.nombre }}</h3>
+    <p><strong>Temporada:</strong> {{ hoguera.temporada }}</p>
+    <p><strong>Ubicación:</strong> {{ hoguera.ubicacion }}</p>
+    <p><strong>Parejas:</strong> {{ hoguera.parejas }}</p>
+  </div>
+</div>

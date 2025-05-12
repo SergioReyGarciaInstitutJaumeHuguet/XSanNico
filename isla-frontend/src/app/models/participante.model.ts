@@ -7,4 +7,3 @@ export interface Participante {
     temporada: number;
     foto: number;
   }
-  

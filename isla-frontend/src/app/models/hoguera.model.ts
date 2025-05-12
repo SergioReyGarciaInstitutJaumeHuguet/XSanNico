@@ -5,4 +5,3 @@ export interface Hoguera {
     ubicacion: string;
     parejas: number;
   }
-  
