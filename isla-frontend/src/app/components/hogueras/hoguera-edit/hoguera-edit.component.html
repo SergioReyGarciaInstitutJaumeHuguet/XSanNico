@@ -14,6 +14,10 @@
   <input id="parejas" type="number" [(ngModel)]="hoguera.parejas" name="parejas" required />
 
   <button type="submit">Guardar</button>
+  <!-- Botón para eliminar la hoguera -->
+  <button class="btn-delete" (click)="delete()">
+    <span class="icon-trash">🗑️</span> Eliminar
+  </button>
 </form>
 
 <div id="fire-bg"></div>

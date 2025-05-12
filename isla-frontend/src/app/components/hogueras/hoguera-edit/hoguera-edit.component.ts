@@ -37,4 +37,15 @@ export class HogueraEditComponent implements OnInit {
       });
     }
   }
+
+  delete(): void {
+    if (confirm('¿Estás seguro de que deseas eliminar esta hoguera?')) {
+      if (this.hoguera._id) {
+        this.hogueraService.delete(this.hoguera._id).subscribe(() => {
+          alert('Hoguera eliminada correctamente');
+          this.router.navigate(['/hogueras']); // Redirige a la lista de hogueras
+        });
+      }
+    }
+  }
 }
