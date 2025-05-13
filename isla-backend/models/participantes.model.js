@@ -1,34 +1,39 @@
+// participantes.model.js
+// Importa mongoose para la definición del esquema y modelo
 const mongoose = require('mongoose');
 
+// Define el esquema para los participantes
 const ParticipanteSchema = new mongoose.Schema({
   nombre: {
     type: String,
-    required: true
+    required: true  // Campo obligatorio
   },
   edad: {
     type: Number,
-    required: true
+    required: true  // Campo obligatorio
   },
   genero: {
     type: String,
-    enum: ['hombre', 'mujer'],
-    required: true
+    enum: ['hombre', 'mujer'],  // El valor debe ser uno de estos dos
+    required: true  // Campo obligatorio
   },
   rol: {
     type: String,
-    enum: ['pareja', 'tentador'],
-    required: true
+    enum: ['pareja', 'tentador'],  // El valor debe ser uno de estos dos
+    required: true  // Campo obligatorio
   },
   temporada: {
     type: Number,
-    required: true
+    required: true  // Campo obligatorio
   },
   foto: {
     type: Number,
-    required: false
+    required: false  // Campo opcional
   }
 }, {
-  timestamps: true
+  timestamps: true  // Añade campos createdAt y updatedAt automáticamente
 });
 
+// Exporta el modelo Participante basado en el esquema definido
+// El tercer parámetro 'Participantes' es el nombre de la colección en MongoDB
 module.exports = mongoose.model('Participante', ParticipanteSchema, 'Participantes');
