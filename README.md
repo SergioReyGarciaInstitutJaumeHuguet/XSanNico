@@ -174,6 +174,6 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para má
 Si tienes preguntas o sugerencias, no dudes en contactarme:
 
 - **Email**: ---
-- **GitHub**: [mrvictorck](https://github.com/mrvictorck)
+- **GitHub**: [mrvictorck](https://github.com/mrvictorck) | [27PAURO](https://github.com/27PAURO)
 
 ¡Gracias por usar la API de La Isla de las Tentaciones! 🌴🔥
